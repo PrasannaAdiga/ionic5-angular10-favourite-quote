@@ -3,10 +3,24 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="tabs"></ion-back-button>
     </ion-buttons>
-    <ion-title>Library1</ion-title>
+    <ion-title>Library</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>
+      Select your favorite Quote
+    </ion-list-header>
+    <ion-item no-lines button *ngFor="let quoteGroup of quoteCollection"
+              [navPush] = "quotesPage" [navParams] = "quoteGroup">
+      <ion-icon [name]="quoteGroup.icon" item-left></ion-icon>
+      <ion-label class="ion-text-wrap" padding>
+        <ion-text color="primary">
+          <h3>{{quoteGroup.category}}</h3>
+        </ion-text>
+        <p>{{quoteGroup.quotes.length}} Quotes</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

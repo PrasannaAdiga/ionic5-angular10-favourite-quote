@@ -7,6 +7,15 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content padding>
+  <ion-list>
+    <ion-item color="quoteBackground"
+              [ngClass]="{alt: isAltBackground()}"
+              *ngFor="let quote of favoriteQuotes"
+              (click) = "onViewQuote(quote)">
+      <h3>{{quote.person}}</h3>
+      <p>{{quote.text}}</p>
+    </ion-item>
+  </ion-list>
 </ion-content>
+
