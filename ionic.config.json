@@ -1,0 +1,7 @@
+{
+  "name": "ionic5-angular10-favourite-quote",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
