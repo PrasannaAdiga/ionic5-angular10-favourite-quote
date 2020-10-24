@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
     { icon: 'home', title: 'Home', url: '/home' },
-    { icon: 'list', title: 'Quotes', url:  '/quotes' },
+    { icon: 'list', title: 'Quotes', url:  '/tabs' },
     { icon: 'settings', title: 'Settings', url: '/settings' }
   ];
 
