@@ -15,6 +15,10 @@ const routes: Routes = [
   {
     path: 'library',
     loadChildren: () => import('./library/library.module').then( m => m.LibraryPageModule)
+  },
+  {
+    path: 'quotes',
+    loadChildren: () => import('./quotes/quotes.module').then( m => m.QuotesPageModule)
   }
 ];
 

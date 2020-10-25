@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end" (click)="closeModal()">
+      <ion-button shape="round" fill="solid" color="danger">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{quoteGroup.category}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-card *ngFor="let quote of quoteGroup.quotes; let i = index" color="light">
+    <ion-card-header>
+      <ion-card-subtitle>#{{i+1}}</ion-card-subtitle>
+      <ion-card-subtitle>{{quote.text}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-note>{{quote.person}}</ion-note>
+    </ion-card-content>
+    <ion-row>
+      <ion-col text-right>
+          <ion-button *ngIf="!isFavorite(quote)" (click)="onAddToFavorites(quote)" fill="outline" color="primary">
+            Favourite
+          </ion-button>
+          <ion-button *ngIf="isFavorite(quote)" (click)="onRemoveFromFavorites(quote)" fill="outline" color="warning">
+            Unfavourite
+          </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>
