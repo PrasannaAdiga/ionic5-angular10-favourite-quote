@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar color="tertiary">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="tabs"></ion-back-button>
     </ion-buttons>
@@ -10,11 +10,15 @@
 <ion-content padding>
   <ion-list>
     <ion-list-header>
-      Select your favorite Quote
+      Select your favorite Quotes
     </ion-list-header>
     <ion-item no-lines button *ngFor="let quoteGroup of quoteCollection"
               (click)="showModal(quoteGroup)">
-      <ion-icon [name]="quoteGroup.icon" item-left></ion-icon>
+      <ion-buttons padding>
+        <ion-button>
+          <ion-icon [name]="quoteGroup.icon" item-left></ion-icon>
+        </ion-button>
+      </ion-buttons>
       <ion-label class="ion-text-wrap" padding>
         <ion-text color="primary">
           <h3>{{quoteGroup.category}}</h3>

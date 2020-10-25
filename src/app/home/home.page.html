@@ -1,4 +1,4 @@
-<ion-toolbar color="primary">
+<ion-toolbar color="tertiary">
   <ion-buttons slot="start">
     <ion-menu-button></ion-menu-button>
   </ion-buttons>
@@ -6,17 +6,23 @@
 </ion-toolbar>
 <ion-content [fullscreen]="true">
   <ion-card>
-    <img src="../../assets/icon/favorite.png"/>
-    <ion-card-content text-center>
-      <p>
-        It provides a library, where user can find list of quotes
-      </p>
-      <p>
-        User can choose any quote and mark it as a Favorite Quote
-      </p>
-      <p>
-        User can un-favorite any favorite quote
-      </p>
-    </ion-card-content>
+    <img src="../../assets/icon/favorite.png" width="1000" height="400"/>
+    <ion-grid>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="6">
+          <ion-note>It provides a library, where user can find list of quotes</ion-note>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="6">
+          <ion-note>User can choose any quote and mark it as a Favorite</ion-note>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="6">
+          <ion-note>User can un-favorite any favorite quote</ion-note>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-card>
 </ion-content>

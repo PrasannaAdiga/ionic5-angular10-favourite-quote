@@ -3,11 +3,11 @@
     <!--  the side menu  -->
     <ion-menu contentId="main">
       <ion-header>
-        <ion-toolbar color="secondary">
+        <ion-toolbar color="primary">
           <ion-title>Favourite Quote</ion-title>
         </ion-toolbar>
       </ion-header>
-      <ion-content>
+      <ion-content >
         <ion-list>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i">

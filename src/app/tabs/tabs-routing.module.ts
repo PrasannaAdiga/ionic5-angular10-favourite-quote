@@ -19,7 +19,11 @@ const routes: Routes = [
   {
     path: 'quotes',
     loadChildren: () => import('./quotes/quotes.module').then( m => m.QuotesPageModule)
-  }
+  },
+  {
+      path: 'quote',
+      loadChildren: () => import('./quote/quote.module').then( m => m.QuotePageModule)
+    }
 ];
 
 @NgModule({

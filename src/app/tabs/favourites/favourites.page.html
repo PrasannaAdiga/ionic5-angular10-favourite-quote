@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar color="tertiary">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="tabs"></ion-back-button>
     </ion-buttons>
@@ -8,14 +8,20 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
-    <ion-item color="quoteBackground"
-              [ngClass]="{alt: isAltBackground()}"
-              *ngFor="let quote of favoriteQuotes"
-              (click) = "onViewQuote(quote)">
-      <h3>{{quote.person}}</h3>
-      <p>{{quote.text}}</p>
-    </ion-item>
-  </ion-list>
+  <ion-grid *ngIf="isEmptyFavoriteQuotes()">
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="8">
+        <ion-note>There are no favourite quotes to show you! Please choose your favourites from library</ion-note>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-card *ngFor="let quote of favoriteQuotes" color="light" (click) = "onViewQuote(quote)">
+    <ion-card-header>
+      <ion-card-subtitle>{{quote.person}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-note>{{quote.text}}</ion-note>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
 

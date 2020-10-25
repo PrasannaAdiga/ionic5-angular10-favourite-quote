@@ -1,7 +1,7 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar color="tertiary">
     <ion-buttons slot="end" (click)="closeModal()">
-      <ion-button shape="round" fill="solid" color="danger">
+      <ion-button shape="round" fill="solid" color="tertiary">
         <ion-icon name="close"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -15,17 +15,19 @@
       <ion-card-subtitle>{{quote.text}}</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
-      <ion-note>{{quote.person}}</ion-note>
+      <ion-note>- {{quote.person}}</ion-note>
     </ion-card-content>
-    <ion-row>
-      <ion-col text-right>
+    <ion-grid>
+      <ion-row class="ion-justify-content-end">
+        <ion-col size="2">
           <ion-button *ngIf="!isFavorite(quote)" (click)="onAddToFavorites(quote)" fill="outline" color="primary">
             Favourite
           </ion-button>
           <ion-button *ngIf="isFavorite(quote)" (click)="onRemoveFromFavorites(quote)" fill="outline" color="warning">
-            Unfavourite
+            Un-favourite
           </ion-button>
-      </ion-col>
-    </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-card>
 </ion-content>
